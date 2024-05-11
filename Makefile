@@ -1,0 +1,20 @@
+# 全実行
+all: init link defaults
+
+# init.shを実行
+init:
+	@echo "\033[0;34mRun init.sh\033[0m"
+	@.bin/init.sh
+	@echo "\033[0;34mDone.\033[0m"
+
+# link.shを実行
+link:
+	@echo "\033[0;34mRun link.sh\033[0m"
+	@.bin/link.sh
+	@echo "\033[0;32mDone.\033[0m"
+
+# macos_defaults.shを実行
+defaults:
+	@echo "\033[0;34mRun macos_defaults.sh\033[0m"
+	@.bin/macos_defaults.sh
+	@echo "\033[0;32mDone.\033[0m"
