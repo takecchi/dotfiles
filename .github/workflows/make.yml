@@ -1,0 +1,17 @@
+name: Run Makefile
+on: pull_request
+
+jobs:
+  make:
+    runs-on: macos-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Dotfiles
+        run: make
