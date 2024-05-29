@@ -11,6 +11,7 @@
 
 ## Installation
 ```bash
+cd ~
 git clone git@github.com:takecchi/dotfiles.git
 cd dotfiles
 make
