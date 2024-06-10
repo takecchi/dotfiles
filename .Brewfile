@@ -9,3 +9,5 @@ brew "sqldef/sqldef/mysqldef"
 brew "sqldef/sqldef/psqldef"
 brew "docker-compose"
 brew "awscli"
+
+cask "session-manager-plugin"
