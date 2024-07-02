@@ -21,3 +21,8 @@ jobs:
 
       - name: Pythonを正常にインストールができるか確認
         run: pyenv install 3.7.13
+
+      - name: Javaを正常にバージョン変更できるか確認
+        run: |
+          jenv global 21
+          jenv global 17

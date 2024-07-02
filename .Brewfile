@@ -9,5 +9,8 @@ brew "sqldef/sqldef/mysqldef"
 brew "sqldef/sqldef/psqldef"
 brew "docker-compose"
 brew "awscli"
+brew "jenv"
+brew "openjdk@17"
 
 cask "session-manager-plugin"
+cask "corretto@21"
