@@ -30,3 +30,8 @@ for dotfile in "${DOTFILES_DIR}"/{.,}*; do
     echo "${target} already exists, skipping."
   fi
 done
+
+# .private_envが存在しなければ作成
+if [ ! -f ${HOME}/.private_env ]; then
+  echo "# 非公開の環境変数を管理" > "${HOME}/.private_env"
+fi

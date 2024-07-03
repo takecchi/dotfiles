@@ -8,6 +8,7 @@
 - dotfilesのシンボリックリンクの作成
 - ファイルの拡張子が表示されるようにする
 - Homebrewでのパッケージのインストール
+- `~/.private_env`の作成
 
 ## Installation
 ```bash
@@ -17,4 +18,11 @@ cd dotfiles
 make
 ```
 
+## 非公開の環境変数について
+`.zshrc`から`~/.private_env`を読み込むようにしています。    
+非公開の環境変数は`~/.private_env`に記述することで管理が可能です。
 
+例: `~/.private_env`
+```bash
+EXPORT GITHUB_TOKEN=xxxxxxxxxxxxxxx
+```
