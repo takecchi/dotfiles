@@ -14,3 +14,4 @@ brew "openjdk@17"
 
 cask "session-manager-plugin"
 cask "corretto@21"
+cask "google-japanese-ime"
