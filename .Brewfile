@@ -11,6 +11,7 @@ brew "docker-compose"
 brew "awscli"
 brew "jenv"
 brew "openjdk@17"
+brew "git"
 
 cask "session-manager-plugin"
 cask "corretto@21"
