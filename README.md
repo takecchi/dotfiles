@@ -24,5 +24,5 @@ make
 
 例: `~/.private_env`
 ```bash
-EXPORT GITHUB_TOKEN=xxxxxxxxxxxxxxx
+export GITHUB_TOKEN=xxxxxxxxxxxxxxx
 ```
