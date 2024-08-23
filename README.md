@@ -9,6 +9,7 @@
 - ファイルの拡張子が表示されるようにする
 - Homebrewでのパッケージのインストール
 - `~/.private_env`の作成
+- ⚠ gitconfigの設定が自分用(takecchi)になっています。
 
 ## Installation
 ```bash
