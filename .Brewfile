@@ -12,6 +12,8 @@ brew "awscli"
 brew "jenv"
 brew "openjdk@17"
 brew "git"
+brew "redis"
+brew "mysql"
 
 cask "session-manager-plugin"
 cask "corretto@21"
