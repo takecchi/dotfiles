@@ -13,3 +13,6 @@ export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 if [ -f ~/.private_env ]; then
   source ~/.private_env
 fi
+
+# エイリアスを設定
+alias git-delete="~/scripts/git-delete-local-branches.sh"
