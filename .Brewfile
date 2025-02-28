@@ -16,6 +16,7 @@ brew "redis"
 brew "mysql@8.0"
 brew "gradle"
 brew "jq"
+brew "tree"
 
 cask "session-manager-plugin"
 cask "corretto@21"
