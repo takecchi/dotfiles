@@ -18,6 +18,7 @@ brew "gradle"
 brew "jq"
 brew "tree"
 brew "postgresql@16"
+brew "aws-nuke"
 
 cask "session-manager-plugin"
 cask "corretto@21"
