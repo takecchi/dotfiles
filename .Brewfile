@@ -17,6 +17,7 @@ brew "mysql@8.0"
 brew "gradle"
 brew "jq"
 brew "tree"
+brew "postgresql@16"
 
 cask "session-manager-plugin"
 cask "corretto@21"
