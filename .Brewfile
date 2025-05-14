@@ -19,6 +19,7 @@ brew "jq"
 brew "tree"
 brew "postgresql@16"
 brew "aws-nuke"
+brew "rustup-init"
 
 cask "session-manager-plugin"
 cask "corretto@21"
