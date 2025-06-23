@@ -20,6 +20,8 @@ brew "tree"
 brew "postgresql@16"
 brew "aws-nuke"
 brew "rustup-init"
+brew "gh"
+brew "imagemagick"
 
 cask "session-manager-plugin"
 cask "corretto@21"
