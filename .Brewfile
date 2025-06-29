@@ -22,6 +22,7 @@ brew "aws-nuke"
 brew "rustup-init"
 brew "gh"
 brew "imagemagick"
+brew "cocoapods"
 
 cask "session-manager-plugin"
 cask "corretto@21"
