@@ -17,3 +17,6 @@ source ~/.zshrc
 # jenvの設定(corretto@21)
 jenv add $(/usr/libexec/java_home -v 21)
 jenv add $(brew --prefix openjdk@17)
+
+# JAVA_HOMEを自動で設定するように
+jenv enable-plugin export
