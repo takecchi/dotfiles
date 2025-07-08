@@ -1,3 +1,5 @@
 [user]
 	name = takecchi
 	email = takecchi.kobayashi@gmail.com
+[core]
+	autocrlf = input
