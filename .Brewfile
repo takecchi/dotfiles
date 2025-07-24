@@ -23,6 +23,7 @@ brew "rustup-init"
 brew "gh"
 brew "imagemagick"
 brew "cocoapods"
+brew "xcodegen"
 
 cask "session-manager-plugin"
 cask "corretto@21"
