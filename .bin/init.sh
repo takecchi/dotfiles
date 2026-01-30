@@ -12,10 +12,8 @@ fi
 if ! xcode-select -p &>/dev/null; then
     echo "Installing Xcode Command Line Tools..."
     xcode-select --install
-    # インストールが完了するのを待つ
-    until xcode-select -p &>/dev/null; do
-        sleep 5
-    done
+    echo "Please complete the installation dialog, then press Enter to continue..."
+    read
 else
     echo "Xcode Command Line Tools are already installed."
 fi
