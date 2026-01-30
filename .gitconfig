@@ -1,5 +1,11 @@
 [user]
 	name = takecchi
 	email = takecchi.kobayashi@gmail.com
+	# 現在の端末用の公開鍵
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJCeBZZ2sK76C9vWG+eMsD4tSaUcj3frnzjEJ02GI8Gt takecchi.kobayashi@gmail.com
 [core]
 	autocrlf = input
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
