@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
+
+set -e
 
 # MacOSチェック
 if [ "$(uname)" != "Darwin" ] ; then
@@ -6,17 +8,13 @@ if [ "$(uname)" != "Darwin" ] ; then
   exit 1
 fi
 
+# tapを先に追加（brew bundleで失敗することがあるため）
+brew tap sqldef/sqldef
+
 # .Brewfileからパッケージをインストール
-brew bundle --global
+brew bundle --global --verbose
 
 # zshの設定を読み込む
 source ~/.zshenv
 source ~/.zprofile
 source ~/.zshrc
-
-# jenvの設定(corretto@21)
-jenv add $(/usr/libexec/java_home -v 21)
-jenv add $(brew --prefix openjdk@17)
-
-# JAVA_HOMEを自動で設定するように
-jenv enable-plugin export

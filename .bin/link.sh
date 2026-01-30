@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
+
+set -e
 
 # スクリプトの実際の場所を取得
-SCRIPT_DIR=$(readlink -f "${BASH_SOURCE[0]}" || realpath "${BASH_SOURCE[0]}")
-DOTFILES_DIR="$(cd "$(dirname "${SCRIPT_DIR}")"/.. && pwd)"
+SCRIPT_DIR="${0:A:h}"
+DOTFILES_DIR="${SCRIPT_DIR:h}"
 
 # dotfilesディレクトリ内の各ファイルとディレクトリに対して処理
 for dotfile in "${DOTFILES_DIR}"/{.,}*; do

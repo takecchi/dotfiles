@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   make:
@@ -10,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        shell: bash
+        shell: zsh -e -l {0}
 
     steps:
       - name: Checkout
@@ -19,10 +20,12 @@ jobs:
       - name: Setup Dotfiles
         run: make
 
-      - name: Pythonを正常にインストールができるか確認
-        run: pyenv install 3.7.13
-
-      - name: Javaを正常にバージョン変更できるか確認
+      - name: miseでPythonをインストールできるか確認
         run: |
-          jenv global 21
-          jenv global 17
+          mise use -g python@3.12
+          python --version | grep -q "^Python 3\.12\." || exit 1
+
+      - name: miseでNode.jsをインストールできるか確認
+        run: |
+          mise use -g node@22
+          node --version | grep -q "^v22\." || exit 1

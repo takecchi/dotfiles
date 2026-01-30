@@ -1,5 +1,5 @@
 # 全実行
-all: init link defaults brew
+all: init link defaults brew migrate_to_mise
 
 # init.shを実行
 init:
@@ -23,4 +23,10 @@ defaults:
 brew:
 	@echo "\033[0;34mRun brew.sh\033[0m"
 	@.bin/brew.sh
+	@echo "\033[0;32mDone.\033[0m"
+
+# migrate_to_mise.shを実行
+migrate_to_mise:
+	@echo "\033[0;34mRun migrate_to_mise.sh\033[0m"
+	@.bin/migrate_to_mise.sh
 	@echo "\033[0;32mDone.\033[0m"
