@@ -8,6 +8,9 @@ if [ "$(uname)" != "Darwin" ] ; then
   exit 1
 fi
 
+# tapを先に追加（brew bundleで失敗することがあるため）
+brew tap sqldef/sqldef
+
 # .Brewfileからパッケージをインストール
 brew bundle --global --verbose
 
