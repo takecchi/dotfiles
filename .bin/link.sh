@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+set -e
+
 # スクリプトの実際の場所を取得
 SCRIPT_DIR="${0:A:h}"
 DOTFILES_DIR="${SCRIPT_DIR:h}"
