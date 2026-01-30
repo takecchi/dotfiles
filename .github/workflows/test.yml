@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        shell: zsh -e {0}
+        shell: zsh -e -l {0}
 
     steps:
       - name: Checkout
@@ -22,12 +22,10 @@ jobs:
 
       - name: miseでPythonをインストールできるか確認
         run: |
-          source ~/.zprofile
           mise use -g python@3.12
-          python --version
+          python --version | grep -q "^Python 3\.12\." || exit 1
 
       - name: miseでNode.jsをインストールできるか確認
         run: |
-          source ~/.zprofile
           mise use -g node@22
-          node --version
+          node --version | grep -q "^v22\." || exit 1
