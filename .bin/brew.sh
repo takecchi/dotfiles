@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # MacOSチェック
 if [ "$(uname)" != "Darwin" ] ; then
@@ -7,16 +7,9 @@ if [ "$(uname)" != "Darwin" ] ; then
 fi
 
 # .Brewfileからパッケージをインストール
-brew bundle --global
+brew bundle --global --verbose
 
 # zshの設定を読み込む
 source ~/.zshenv
 source ~/.zprofile
 source ~/.zshrc
-
-# jenvの設定(corretto@21)
-jenv add $(/usr/libexec/java_home -v 21)
-jenv add $(brew --prefix openjdk@17)
-
-# JAVA_HOMEを自動で設定するように
-jenv enable-plugin export

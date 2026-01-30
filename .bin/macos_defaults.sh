@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # MacOSチェック
 if [ "$(uname)" != "Darwin" ] ; then
