@@ -1,9 +1,11 @@
 cask_args appdir: "/Applications"
 
+tap "sqldef/sqldef"
+
 brew "docker"
 brew "xz"
-brew "sqldef/sqldef/mysqldef"
-brew "sqldef/sqldef/psqldef"
+brew "mysqldef"
+brew "psqldef"
 brew "docker-compose"
 brew "awscli"
 brew "git"
