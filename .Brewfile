@@ -1,26 +1,44 @@
 cask_args appdir: "/Applications"
 
+# taps
 tap "sqldef/sqldef"
 
-brew "docker"
+# core utilities
+brew "gnu-sed"
+brew "coreutils"
+brew "watch"
 brew "xz"
-brew "mysqldef"
-brew "psqldef"
-brew "docker-compose"
-brew "awscli"
-brew "git"
-brew "redis"
-brew "mysql@8.0"
 brew "jq"
 brew "tree"
-brew "postgresql@16"
-brew "aws-nuke"
-brew "rustup-init"
+
+# development tools
+brew "git"
 brew "gh"
+brew "mise"
+brew "rustup-init"
+brew "awscli"
+brew "aws-nuke"
+
+# database tools
+brew "mysql@8.0"
+brew "postgresql@16"
+brew "redis"
+brew "mysqldef"
+brew "psqldef"
+
+# development utilities
 brew "imagemagick"
 brew "cocoapods"
 brew "xcodegen"
-brew "mise"
 
+# docker
+# Docker Desktop includes Docker Engine + CLI + Compose
+# so standalone docker/docker-compose via brew are disabled
+
+# brew "docker"
+# brew "docker-compose"
+cask "docker"
+
+# other applications
 cask "session-manager-plugin"
 cask "google-japanese-ime"
