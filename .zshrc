@@ -15,6 +15,6 @@ fi
 # エイリアスを設定
 alias git-delete="~/scripts/git-delete-local-branches.sh"
 
-claude() {
+claude-sandbox() {
   docker sandbox run claude -- --dangerously-skip-permissions "$@"
 }
