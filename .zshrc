@@ -16,5 +16,7 @@ fi
 alias git-delete="~/scripts/git-delete-local-branches.sh"
 
 claude-sandbox() {
-  docker sandbox run claude -- --dangerously-skip-permissions "$@"
+  local hash=$(echo -n "$PWD" | md5 -q | cut -c1-12)
+  local name="claude-${hash}"
+  docker sandbox run --name "$name" claude -- --dangerously-skip-permissions "$@"
 }
