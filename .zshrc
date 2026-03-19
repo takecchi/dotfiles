@@ -16,11 +16,18 @@ fi
 alias git-delete="~/scripts/git-delete-local-branches.sh"
 
 claude-sandbox() {
-  local hash=$(echo -n "$PWD" | md5 -q | cut -c1-12)
-  local name="claude-${hash}"
-  if docker sandbox list 2>/dev/null | grep -q "$name"; then
-    docker sandbox run "$name" -- --dangerously-skip-permissions "$@"
-  else
-    docker sandbox run --name "$name" claude -- --dangerously-skip-permissions "$@"
+  if [ ! -f "$HOME/.claude.json" ]; then
+    echo "Error: ~/.claude.json not found. Please run 'claude' locally to complete setup first."
+    return 1
   fi
+  local oauth_token
+  oauth_token="$(security find-generic-password -s 'Claude Code-credentials' -w 2>/dev/null | jq -r '.claudeAiOauth.accessToken')"
+  docker run -it --rm \
+    -v "$PWD:$PWD" \
+    -v "$HOME/.claude:/home/agent/.claude" \
+    -v "$HOME/.claude.json:/home/agent/.claude.json" \
+    -e CLAUDE_CODE_OAUTH_TOKEN="$oauth_token" \
+    -w "$PWD" \
+    docker/sandbox-templates:claude-code \
+    /home/agent/.local/bin/claude --dangerously-skip-permissions --model claude-opus-4-6 "$@"
 }
