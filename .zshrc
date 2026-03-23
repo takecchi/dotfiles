@@ -28,14 +28,12 @@ claude-sandbox() {
   docker rm -f "$name" > /dev/null 2>&1
   docker create -it --name "$name" \
     -v "$PWD:$PWD" \
+    -v "$HOME/.claude:/home/agent/.claude" \
     -e CLAUDE_CODE_OAUTH_TOKEN="$oauth_token" \
     -w "$PWD" \
     docker/sandbox-templates:claude-code \
     /home/agent/.local/bin/claude --dangerously-skip-permissions --model claude-opus-4-6 "$@" > /dev/null
-  docker cp "$HOME/.claude" "$name:/home/agent/.claude"
-  if [ -f "$HOME/.claude.json" ]; then
-    docker cp "$HOME/.claude.json" "$name:/home/agent/.claude.json"
-  fi
+  docker cp "$HOME/.claude.json" "$name:/home/agent/.claude.json"
   docker start -ai "$name"
   docker rm "$name" > /dev/null 2>&1
 }
