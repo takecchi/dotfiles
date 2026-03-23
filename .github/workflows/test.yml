@@ -17,6 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Git Config for CI
+        run: |
+          git config --global user.name "CI Test User"
+          git config --global user.email "ci@example.com"
+          git config --global core.autocrlf input
+
       - name: Setup Dotfiles
         run: make
 
@@ -29,3 +35,7 @@ jobs:
         run: |
           mise use -g node@22
           node --version | grep -q "^v22\." || exit 1
+
+      - name: Claude CLIが動作するか確認
+        run: |
+          claude --version

@@ -22,12 +22,18 @@ claude-sandbox() {
   fi
   local oauth_token
   oauth_token="$(security find-generic-password -s 'Claude Code-credentials' -w 2>/dev/null | jq -r '.claudeAiOauth.accessToken')"
-  docker run -it --rm \
+  local hash name
+  hash=$(echo -n "$PWD" | shasum -a 256 | cut -c1-8)
+  name="claude-${hash}"
+  docker rm -f "$name" > /dev/null 2>&1
+  docker create -it --name "$name" \
     -v "$PWD:$PWD" \
     -v "$HOME/.claude:/home/agent/.claude" \
-    -v "$HOME/.claude.json:/home/agent/.claude.json" \
     -e CLAUDE_CODE_OAUTH_TOKEN="$oauth_token" \
     -w "$PWD" \
     docker/sandbox-templates:claude-code \
-    /home/agent/.local/bin/claude --dangerously-skip-permissions --model claude-opus-4-6 "$@"
+    /home/agent/.local/bin/claude --dangerously-skip-permissions --model claude-opus-4-6 "$@" > /dev/null
+  tar -cf - --no-xattrs --uid 1000 --gid 1000 -C "$HOME" .claude.json | docker cp - "$name:/home/agent/"
+  docker start -ai "$name"
+  docker rm "$name" > /dev/null 2>&1
 }
