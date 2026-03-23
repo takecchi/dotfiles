@@ -39,4 +39,3 @@ jobs:
       - name: Claude CLIが動作するか確認
         run: |
           claude --version
-          claude-sandbox --version
