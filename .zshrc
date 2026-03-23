@@ -33,7 +33,7 @@ claude-sandbox() {
     -w "$PWD" \
     docker/sandbox-templates:claude-code \
     /home/agent/.local/bin/claude --dangerously-skip-permissions --model claude-opus-4-6 "$@" > /dev/null
-  docker cp "$HOME/.claude.json" "$name:/home/agent/.claude.json"
+  tar -cf - --no-xattrs --uid 1000 --gid 1000 -C "$HOME" .claude.json | docker cp - "$name:/home/agent/"
   docker start -ai "$name"
   docker rm "$name" > /dev/null 2>&1
 }
