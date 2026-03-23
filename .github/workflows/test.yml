@@ -17,6 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Git Config for CI
+        run: |
+          git config --global user.name "CI Test User"
+          git config --global user.email "ci@example.com"
+          git config --global core.autocrlf input
+
       - name: Setup Dotfiles
         run: make
 
