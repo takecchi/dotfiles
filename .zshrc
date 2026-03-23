@@ -16,7 +16,7 @@ fi
 alias git-delete="~/scripts/git-delete-local-branches.sh"
 
 claude-sandbox() {
-  if [ ! -f "$HOME/.claude.json" ]; then
+  if [ ! -d "$HOME/.claude" ]; then
     echo "Error: ~/.claude.json not found. Please run 'claude' locally to complete setup first."
     return 1
   fi
@@ -25,7 +25,6 @@ claude-sandbox() {
   docker run -it --rm \
     -v "$PWD:$PWD" \
     -v "$HOME/.claude:/home/agent/.claude" \
-    -v "$HOME/.claude.json:/home/agent/.claude.json" \
     -e CLAUDE_CODE_OAUTH_TOKEN="$oauth_token" \
     -w "$PWD" \
     docker/sandbox-templates:claude-code \
