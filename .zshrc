@@ -17,7 +17,7 @@ alias git-delete="~/scripts/git-delete-local-branches.sh"
 
 claude-sandbox() {
   if [ ! -d "$HOME/.claude" ]; then
-    echo "Error: ~/.claude.json not found. Please run 'claude' locally to complete setup first."
+    echo "Error: ~/.claude not found. Please run 'claude' locally to complete setup first."
     return 1
   fi
   local oauth_token
