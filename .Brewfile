@@ -39,6 +39,9 @@ brew "xcodegen"
 # brew "docker-compose"
 cask "docker"
 
+# terminal
+cask "iterm2"
+
 # other applications
 cask "session-manager-plugin"
 cask "google-japanese-ime"
