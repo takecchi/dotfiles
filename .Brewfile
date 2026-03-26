@@ -13,6 +13,7 @@ brew "tree"
 
 # development tools
 brew "git"
+brew "git-lfs"
 brew "gh"
 brew "mise"
 brew "rustup-init"
