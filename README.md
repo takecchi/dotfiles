@@ -10,6 +10,7 @@
 - Homebrewでのパッケージのインストール
 - `~/.private_env`の作成
 - `.gitconfig`の対話セットアップ（ユーザー名・メール・SSH署名）
+- Cluadeのインストール、サンドボックス環境下で起動できるコマンドも追加 `claude-sandbox`
 
 ## Installation
 ```bash
