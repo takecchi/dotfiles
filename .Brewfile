@@ -16,12 +16,12 @@ brew "git"
 brew "git-lfs"
 brew "gh"
 brew "mise"
-brew "rustup-init"
+brew "rustup"
 brew "awscli"
 brew "aws-nuke"
 
 # AI tools
-brew "codex"
+cask "codex"
 
 # database tools
 brew "mysql@8.0"
@@ -41,7 +41,7 @@ brew "xcodegen"
 
 # brew "docker"
 # brew "docker-compose"
-cask "docker"
+cask "docker-desktop"
 
 # terminal
 cask "iterm2"
