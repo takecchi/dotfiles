@@ -20,6 +20,9 @@ brew "rustup-init"
 brew "awscli"
 brew "aws-nuke"
 
+# AI tools
+brew "codex"
+
 # database tools
 brew "mysql@8.0"
 brew "postgresql@16"
