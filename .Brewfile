@@ -45,6 +45,7 @@ cask "docker"
 
 # terminal
 cask "iterm2"
+cask "ghostty"
 
 # other applications
 cask "session-manager-plugin"
