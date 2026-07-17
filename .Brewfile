@@ -16,7 +16,6 @@ brew "git"
 brew "git-lfs"
 brew "gh"
 brew "mise"
-brew "rustup"
 brew "awscli"
 brew "aws-nuke"
 
