@@ -11,6 +11,7 @@
 - `~/.private_env`の作成
 - `.gitconfig`の対話セットアップ（ユーザー名・メール・SSH署名）
 - Cluadeのインストール、サンドボックス環境下で起動できるコマンドも追加 `claude-sandbox`
+- Grok CLIのインストール
 
 ## Installation
 ```bash
@@ -55,6 +56,18 @@ mise use python@3.12
 
 # インストール済みのランタイム確認
 mise list
+```
+
+## Grok CLI
+xAIの[Grok CLI](https://x.ai/cli)を`~/.grok/bin`にインストールします。    
+PATHと補完の設定は`.zshrc`で管理しているため、公式インストーラによるシェル設定の書き換えは行いません。
+
+```bash
+# バージョン確認
+grok --version
+
+# 更新（CLI自身のセルフアップデート）
+grok update
 ```
 
 ## 非公開の環境変数について

@@ -49,3 +49,35 @@ if ! command -v claude >/dev/null 2>&1; then
 else
     echo "Claude CLI is already installed."
 fi
+
+# Grok CLI がインストールされていなければインストール
+GROK_BIN="$HOME/.grok/bin"
+
+# 過去のインストールが残した壊れたシンボリックリンクを掃除
+for link in "$HOME/.local/bin/grok" "$HOME/.local/bin/agent"; do
+    if [ -L "$link" ] && [ ! -e "$link" ]; then
+        echo "Removing broken symlink: $link"
+        rm -f "$link"
+    fi
+done
+
+if [ -x "$GROK_BIN/grok" ]; then
+    echo "Grok CLI is already installed."
+else
+    echo "Installing Grok CLI..."
+
+    # 先にPATHへ追加しておくことで、インストーラが~/.local/binへ
+    # シンボリックリンクを作るのを抑止する
+    export PATH="$GROK_BIN:$PATH"
+
+    # SHELL=/bin/sh を指定してインストーラによるシェル設定ファイルの
+    # 書き換えを回避する（~/.zshrcはdotfilesのシンボリックリンクのため）
+    curl -fsSL https://x.ai/cli/install.sh | SHELL=/bin/sh bash
+
+    if [ -x "$GROK_BIN/grok" ]; then
+        echo "Grok installed at $GROK_BIN/grok"
+    else
+        echo "Grok installation failed or binary not found."
+        exit 1
+    fi
+fi
