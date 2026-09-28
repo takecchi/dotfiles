@@ -24,7 +24,7 @@ cask "codex"
 
 # database tools
 brew "mysql@8.0"
-brew "postgresql@16"
+brew "postgresql@18"
 brew "redis"
 brew "mysqldef"
 brew "psqldef"

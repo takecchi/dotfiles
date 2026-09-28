@@ -5,7 +5,7 @@ eval "$(mise activate zsh)"
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 # postgresql
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
 # 環境変数を別ファイルから読み込む
 if [ -f ~/.private_env ]; then
@@ -56,3 +56,6 @@ export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+
+# Added by Antigravity CLI installer
